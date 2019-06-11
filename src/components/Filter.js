@@ -9,11 +9,11 @@ export default () => (
   <div className="filter">
     <div className="filter_view">
       <h3 className="filter_view-title">View</h3>
-      <input onClick={sortView('all')} className="filter_view-item" type="radio" name="view" value="All"/>
+      <input onClick={sortView()} className="filter_view-item" type="radio" name="view" value="All"/>
         <label className="filter_view-all" htmlFor="view">All</label><br/>
-      <input onClick={sortView('avaialable')} className="filter_view-item" type="radio" name="view" value="Available"/>
+      <input onClick={sortView()} className="filter_view-item" type="radio" name="view" value="Available"/>
         <label className="filter_view-avail" htmlFor="view">Available</label><br/>
-      <input onClick={sortView('purchased')} className="filter_view-item" type="radio" name="view" value="Purchased"/>
+      <input className="filter_view-item" type="radio" name="view" value="Purchased"/>
         <label className="filter_view-res" htmlFor="view">Reserved / Purchased</label><br/>
     </div>
 

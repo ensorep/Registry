@@ -43,10 +43,19 @@ const items = [
 
   {
     id: 5,
+    title: 'Nature Babycare Diapers (25ct)',
+    price: '10',
+    src: () => items[4].title.split(' ').map(item=>item=`${item}+`).join(''),
+    imgsrc: 'https://www.naty.com/on/demandware.static/-/Sites-naty-catalog/default/dw72ddcce7/Products/diapering/2018/diaper-newborn-singlepack-2018/large-650x650/8178341_Baby-Diapers-Single-Pack-Size-Newborn_01_large.png',
+    available: true,
+  },
+
+  {
+    id: 6,
     title: 'Donation',
     price: 'x',
-    src: () => items[4].title.split(' ').map(item=>item=`${item}+`).join(''),
-    imgsrc: 'null',
+    src: () => items[5].title.split(' ').map(item=>item=`${item}+`).join(''),
+    imgsrc: 'https://garfieldparkacademy.org/wp-content/uploads/2018/04/hand_heart_donate_icon.png',
     available: true,
   },
 ]
@@ -59,7 +68,7 @@ function getItems() {
           key = {item.id}
           title={item.title}
           price={`$${item.price}`}
-          src={`${google}${item.src()}`}
+          src={`${google}${item.src()}&tbm=shop`}
           imgsrc={item.imgsrc}
           available={item.available}
         />

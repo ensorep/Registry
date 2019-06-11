@@ -9,6 +9,18 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`,
     {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: 'vgfhc6gv',
+        dataset: 'production',
+        // To enable preview of drafts, copy .env-example into .env,
+        // and add a token with read permissions
+        // token: process.env.SANITY_TOKEN,
+        watchMode: false,
+        overlayDrafts: false,
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
