@@ -2,8 +2,37 @@ import React from "react"
 import Header from "../components/Header"
 import Item from "../components/Item"
 import Filter from "../components/Filter"
-const google = "https://google.com/search?q="
+import Footer from "../components/Footer"
+import firebase from "firebase/app";
+import About from "../components/about"
+import Modal from "../components/modal"
+import 'firebase/database';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faInfoCircle, faDirections,faMoon,faStar, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
+library.add(faInfoCircle, faDirections, faStar, faMoon, faBars, faTimes);
+
+var firebaseConfig = {
+  apiKey: "AIzaSyBCXAMZbtLWLriDfqU1I6E01B09hk7taoU",
+  authDomain: "fir-registry-4ae92.firebaseapp.com",
+  databaseURL: "https://fir-registry-4ae92.firebaseio.com",
+  projectId: "fir-registry-4ae92",
+  storageBucket: "fir-registry-4ae92.appspot.com",
+  messagingSenderId: "844241222482",
+  appId: "1:844241222482:web:03b5e21c510cecd9"
+};
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
+
+const db = firebase.database()
+const rootRef = db.ref();
+rootRef.on("value",snapshot => {
+  console.log(snapshot.val())
+})
+const google = "https://google.com/search?q="
 const items = [
   {
     id: 1,
@@ -38,7 +67,7 @@ const items = [
     price: 300,
     src: () => items[3].title.split(' ').map(item=>item=`${item}+`).join(''),
     imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/71XfKS8ekbL._SX355_.jpg',
-    available: true,
+    available: "true",
   },
 
   {
@@ -47,13 +76,13 @@ const items = [
     price: '10',
     src: () => items[4].title.split(' ').map(item=>item=`${item}+`).join(''),
     imgsrc: 'https://www.naty.com/on/demandware.static/-/Sites-naty-catalog/default/dw72ddcce7/Products/diapering/2018/diaper-newborn-singlepack-2018/large-650x650/8178341_Baby-Diapers-Single-Pack-Size-Newborn_01_large.png',
-    available: true,
+    available: "purchased",
   },
 
   {
     id: 6,
     title: 'Donation',
-    price: 'x',
+    price: '0',
     src: () => items[5].title.split(' ').map(item=>item=`${item}+`).join(''),
     imgsrc: 'https://garfieldparkacademy.org/wp-content/uploads/2018/04/hand_heart_donate_icon.png',
     available: true,
@@ -77,12 +106,15 @@ function getItems() {
   )
 }
 
+
+
+
 export default () => (
 <div id="app">
 <Header/>
+<div className ="item_wrapper">{getItems()}</div>
+<About/>
+<Modal/>
 <Filter/>
-<div className ="item_wrapper">
-  {getItems()}
-</div>
-
+<Footer/>
 </div>)
