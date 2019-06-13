@@ -9,6 +9,24 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`,
     {
+      resolve: `gatsby-source-firebase`,
+      options: {
+        // point to the firebase private key downloaded
+        credential: require("./service-account-file.json"),
+
+        // your firebase database root url
+        databaseURL: "https://fir-registry-4ae92.firebaseio.com",
+
+        // you can have multiple "types" that point to different paths
+        types: [
+          {
+            type:"item",
+            path: "/items",
+          }
+        ]
+      }
+    },
+    {
       resolve: 'gatsby-source-sanity',
       options: {
         projectId: 'vgfhc6gv',

@@ -1,30 +1,60 @@
 import React from "react"
 
-function sortView(value){
-  console.log(value)
+function showAll() {
+  document.getElementById("purchased").classList.remove("activeFilter");
+  document.getElementById("available").classList.remove("activeFilter");
+  document.getElementById("all").classList.add("activeFilter");
+ let items = document.getElementsByClassName("item")
+ for(let i in items){
+   if(items[i].classList){
+    items[i].classList.remove("hide");
+    items[i].classList.add("showf");
+   } 
+ }
 }
 
+function showPurchased() {
+  document.getElementById("all").classList.remove("activeFilter");
+  document.getElementById("available").classList.remove("activeFilter");
+  document.getElementById("purchased").classList.add("activeFilter");
+  
+
+  let items = document.getElementsByClassName("item")
+  for(let i in items){
+    let itemClass = items[i].classList;
+    if(itemClass){
+      itemClass.remove("hide");
+        if(items[i].dataset.available !== "purchased"){
+          itemClass.add("hide")
+      }
+    }
+  } 
+}
+
+function showavailable() {
+  document.getElementById("purchased").classList.remove("activeFilter");
+  document.getElementById("all").classList.remove("activeFilter");
+  document.getElementById("available").classList.add("activeFilter");
+  let items = document.getElementsByClassName("item")
+  for(let i in items){
+    let itemClass = items[i].classList;
+    if(itemClass){
+      itemClass.remove("hide");
+        if(items[i].dataset.available !== "available"){
+          itemClass.add("hide")
+      }
+    }
+  } 
+}
 
 export default () => ( 
-  <div className="filter">
-    <div className="filter_view">
-      <h3 className="filter_view-title">View</h3>
-      <input onClick={sortView()} className="filter_view-item" type="radio" name="view" value="All"/>
-        <label className="filter_view-all" htmlFor="view">All</label><br/>
-      <input onClick={sortView()} className="filter_view-item" type="radio" name="view" value="Available"/>
-        <label className="filter_view-avail" htmlFor="view">Available</label><br/>
-      <input className="filter_view-item" type="radio" name="view" value="Purchased"/>
-        <label className="filter_view-res" htmlFor="view">Reserved / Purchased</label><br/>
-    </div>
-
-    <div className="filter_price">
-    <h3 className="filter_view-title">Price</h3>
-      <input className="filter_price-item" type="radio" name="price" value="under50"/>
-        <label className="filter_price-low" htmlFor="price">Under $50</label><br/>
-      <input className="filter_price-item" type="radio" name="price" value="50to100"/>
-        <label className="filter_price-low" htmlFor="price">$50 - $100</label><br/>
-      <input className="filter_price-item" type="radio" name="price" value="over100"/>
-        <label className="filter_price-low" htmlFor="price">$100+</label><br/>
-    </div>
-  </div>
+  <div id="filter" className="filter">
+  <ul className="filter_ul">
+    <li id="all" onClick={showAll} className="filter_all">All</li>
+    <li id="purchased" onClick={showPurchased}
+      className="filter_purchased">Purchased</li>
+    <li id="available" onClick={showavailable}
+      className="filter_available">Available</li>
+  </ul>
+</div>
   )

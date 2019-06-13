@@ -1,9 +1,16 @@
 import React from "react"
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default () => (
 <div className="header">
-<h3 className="header-title"> Kayla + Reggie's Baby Registry </h3>
- 
+<FontAwesomeIcon 
+  className="icon-moon"
+  icon="moon"
+/>
+<h3 className="header-title"> Peterson Registry</h3>
+<FontAwesomeIcon
+  className="icon-star"
+  icon="star"
+/>
 </div>
 
 )

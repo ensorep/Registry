@@ -1,0 +1,42 @@
+$ftr-height: 8vh;
+$border: 3px solid #eeeeee;
+%footer-item{
+  height: $ftr-height;
+  display: flex;
+  flex: 1;
+  max-width: inherit;
+}
+
+.footer {
+  display: flex;
+  height: $ftr-height;
+  width: 100%;
+  position: fixed;
+  background: linear-gradient(to left, #333399e8 8%, #a76ef3);
+  bottom: 0;
+  justify-content: space-between;
+  &_filter {
+    @extend %footer-item;
+    // background-color: $gradient1;
+    &-active {
+      margin: auto;
+      color: #fff;
+      position: relative;
+    }
+  }
+  &_about{
+    @extend %footer-item;
+  }
+  &_map{
+    @extend %footer-item;
+    // background-color:#a2a2a2;
+  }
+}
+
+.active{
+  color: $primary;
+}
+
+#activeFilter{
+  transition: all .5s;
+}

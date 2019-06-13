@@ -1,15 +1,67 @@
 $primary: #333399;
-$secondary: #a2a2a2;
-$accent:#ff00cc;
+$secondary: #5f5f5f;
+$gradient1: #32a0ef;
+$gradient2: #89fffd;
+$ftr-size: 1.8rem;
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap");
+
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
+  background: url("https://www.printawallpaper.com/upload/designs/Space_Background_d.jpg");
+  background-attachment: fixed;
+  background-size: contain;
 }
 
 #app{
-  background-repeat: none;
+  position: relative;
+  // background: url('https://png.pngtree.com/thumb_back/fw800/back_pic/03/72/84/4657b98ace28ed4.jpg');
+  
+ // background: linear-gradient( $gradient1, $gradient2);
+ 
 }
 
-@import 'filters';
-@import 'item';
+%filtericon {
+  color: #fff;
+  font-size: $ftr-size;
+  margin: auto;
+}
+
+.icon {
+  &-info {
+    @extend %filtericon;
+  }
+  &-directions {
+    @extend %filtericon;
+  }
+  &-moon {
+    color: #fffc71;
+    @extend %filtericon;
+  }
+  &-star {
+    color: #fffc71;
+    @extend %filtericon;
+  }
+  &-bars {
+    @extend %filtericon;
+  }
+}
+
+.show{
+  transition: all .4s;
+  display: block !important;
+}
+
+.hide {
+  transition: all .4s;
+  display: none !important;
+}
+
 @import 'header';
+@import 'item';
+@import 'footer';
+@import 'filters';
