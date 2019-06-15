@@ -43,13 +43,13 @@ export default props => (
             icon ="bars"/>
           
       </div>
-      <span>FILTER</span>
+      <span className="footer_filter-filter">FILTER</span>
     </div>
     <div onClick={toggleInfo} className="footer_about">
       <FontAwesomeIcon 
       className="icon-info"
       icon="info-circle"/>
-      <span>INFO</span>
+      <span className="footer_filter-info">INFO</span>
     </div>
     <div 
       onClick={launchMap} 
@@ -57,7 +57,7 @@ export default props => (
     <FontAwesomeIcon
       className="icon-directions"
       icon="directions"/>
-      <span>DIRECTIONS</span>
+      <span className="footer_filter-dir">DIRECTIONS</span>
     </div>
   </div>
 )

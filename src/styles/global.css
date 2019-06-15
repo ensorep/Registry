@@ -19,6 +19,7 @@ body {
   color: #fff;
   font-size: 1.8rem;
   margin: auto;
+  padding-bottom: .8rem;
 }
 
 .icon-moon {
@@ -173,6 +174,14 @@ body {
   max-width: inherit;
 }
 
+.footer_filter-filter, .footer_filter-info, .footer_filter-dir {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  margin: .1rem;
+  top: 62%;
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -192,6 +201,18 @@ body {
   margin: auto;
   color: #fff;
   position: relative;
+}
+
+.footer_filter-filter {
+  left: 10%;
+}
+
+.footer_filter-info {
+  left: 44.5%;
+}
+
+.footer_filter-dir {
+  right: 5%;
 }
 
 .active {
@@ -234,6 +255,65 @@ body {
   -webkit-transition: all .4s;
   transition: all .4s;
   background: #32a0ef;
+  font-weight: bold;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 94%;
+  right: 0;
+  background: #9d69ea;
+  color: #fff;
+  border-radius: 1rem;
+  height: 50vh;
+  margin: auto;
+  margin-top: 20vh;
+}
+
+.modal_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+}
+
+.modal_header h3 {
+  margin: auto;
+  font-size: 1.25rem;
+}
+
+.modal_main {
+  padding: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal_main p {
+  font-size: 1.3rem;
+}
+
+.modal_button-submit {
+  margin: 1rem;
+  padding: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 15px;
+  background: #379dee;
+  color: #fff;
   font-weight: bold;
 }
 /*# sourceMappingURL=global.css.map */

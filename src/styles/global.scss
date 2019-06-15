@@ -29,6 +29,7 @@ body {
   color: #fff;
   font-size: $ftr-size;
   margin: auto;
+  padding-bottom: .8rem;
 }
 
 .icon {
@@ -65,3 +66,4 @@ body {
 @import 'item';
 @import 'footer';
 @import 'filters';
+@import 'modal';

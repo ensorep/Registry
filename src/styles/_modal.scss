@@ -3,5 +3,42 @@
   top: 0;
   bottom: 0;
   left: 0;
+  width: 94%;
   right: 0;
+  background: #9d69ea;
+  color: #fff;
+  border-radius: 1rem;
+  height: 50vh;
+  margin: auto;
+  margin-top: 20vh;
+  &_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    h3 {
+      margin: auto;
+    font-size: 1.25rem;
+    }
+  }
+  &_main {
+    p {
+      font-size: 1.3rem;
+    }
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &_button {
+    &-submit {
+      margin: 1rem;
+      padding: 0.5rem;
+      border: none;
+      font-size: 1rem;
+      border-radius: 15px;
+      background: #379dee;
+      color: #fff;
+      font-weight: bold;
+    }
+  }
 }

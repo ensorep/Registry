@@ -6,7 +6,13 @@ $border: 3px solid #eeeeee;
   flex: 1;
   max-width: inherit;
 }
-
+%footer-text {
+  position: absolute;
+    bottom: 0;
+    color: #fff;
+    margin: .1rem;
+    top: 62%;
+}
 .footer {
   display: flex;
   height: $ftr-height;
@@ -22,6 +28,18 @@ $border: 3px solid #eeeeee;
       margin: auto;
       color: #fff;
       position: relative;
+    }
+    &-filter {
+      left: 10%;
+      @extend %footer-text;
+    }
+    &-info {
+      left: 44.5%;
+      @extend %footer-text;
+    }
+    &-dir {
+      right: 5%;
+      @extend %footer-text;
     }
   }
   &_about{

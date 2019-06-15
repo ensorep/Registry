@@ -8,7 +8,7 @@ import About from "../components/about"
 import Modal from "../components/modal"
 import 'firebase/database';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faInfoCircle, faDirections,faMoon,faStar, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faInfoCircle, faDirections,faMoon,faStar, faBars, faTimes, faBuilding } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faInfoCircle, faDirections, faStar, faMoon, faBars, faTimes);
 
@@ -25,7 +25,6 @@ var firebaseConfig = {
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
-
 
 const db = firebase.database()
 const rootRef = db.ref();
@@ -55,7 +54,7 @@ const items = [
   {
     id: 3,
     title: 'Nanit Plus Baby Monitor',
-    price: 200,
+    price: 300,
     src: () => items[2].title.split(' ').map(item=>item=`${item}+`).join(''),
     imgsrc: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6304/6304010_sd.jpg',
     available: true,
@@ -64,36 +63,47 @@ const items = [
   {
     id: 4,
     title: 'DaVinci Jenny Lind Stationary Crib',
-    price: 300,
+    price: 200,
     src: () => items[3].title.split(' ').map(item=>item=`${item}+`).join(''),
     imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/71XfKS8ekbL._SX355_.jpg',
-    available: "true",
+    available: true,
   },
 
   {
     id: 5,
     title: 'Nature Babycare Diapers (25ct)',
-    price: '10',
+    price: 10,
     src: () => items[4].title.split(' ').map(item=>item=`${item}+`).join(''),
     imgsrc: 'https://www.naty.com/on/demandware.static/-/Sites-naty-catalog/default/dw72ddcce7/Products/diapering/2018/diaper-newborn-singlepack-2018/large-650x650/8178341_Baby-Diapers-Single-Pack-Size-Newborn_01_large.png',
-    available: "purchased",
+    available: true,
   },
 
   {
     id: 6,
+    title: '',
+    price: 10,
+    src: () => items[4].title.split(' ').map(item=>item=`${item}+`).join(''),
+    imgsrc: '',
+    available: true,
+  },
+
+
+  {
+    id: 7,
     title: 'Donation',
     price: '0',
-    src: () => items[5].title.split(' ').map(item=>item=`${item}+`).join(''),
+    src: () => items[6].title.split(' ').map(item=>item=`${item}+`).join(''),
     imgsrc: 'https://garfieldparkacademy.org/wp-content/uploads/2018/04/hand_heart_donate_icon.png',
     available: true,
   },
 ]
 
+
 function getItems() {
   return (
     items.map(item=>{
       return( 
-        <Item 
+        <Item
           key = {item.id}
           title={item.title}
           price={`$${item.price}`}
@@ -106,15 +116,14 @@ function getItems() {
   )
 }
 
-
-
-
 export default () => (
 <div id="app">
 <Header/>
-<div className ="item_wrapper">{getItems()}</div>
+<div className ="item_wrapper">
+  {getItems()}
+</div>
 <About/>
-<Modal/>
 <Filter/>
 <Footer/>
-</div>)
+</div>
+)
