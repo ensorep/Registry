@@ -3,12 +3,13 @@ import Header from "../components/Header"
 import Item from "../components/Item"
 import Filter from "../components/Filter"
 import Footer from "../components/Footer"
-import firebase from "firebase/app";
-import About from "../components/about"
-import Modal from "../components/modal"
+import firebase from "firebase/app"
+import Layout from "../components/Layout"
+
+
 import 'firebase/database';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faInfoCircle, faDirections,faMoon,faStar, faBars, faTimes, faBuilding } from '@fortawesome/free-solid-svg-icons';
+import { faInfoCircle, faDirections,faMoon,faStar, faBars, faTimes, } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faInfoCircle, faDirections, faStar, faMoon, faBars, faTimes);
 
@@ -48,7 +49,7 @@ const items = [
     price: 150,
     src: () => items[1].title.split(' ').map(item=>item=`${item}+`).join(''),
     imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/81H3lgWOVZL._SY355_.jpg',
-    available: false,
+    available: true,
   },
 
   {
@@ -117,13 +118,12 @@ function getItems() {
 }
 
 export default () => (
-<div id="app">
-<Header/>
-<div className ="item_wrapper">
-  {getItems()}
-</div>
-<About/>
-<Filter/>
-<Footer/>
-</div>
+<Layout>
+  <Header/>
+  <div className ="item_wrapper">
+    {getItems()}
+  </div>
+  <Filter/>
+  <Footer/>
+</Layout>
 )

@@ -1,0 +1,46 @@
+.about {
+	background: rgb(156, 104, 235);
+	border-radius: 1rem;
+	width: 85%;
+	margin: auto;
+	margin-top: 7rem;
+	padding: 0 1rem;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	color: #fff;
+	height: 77vh;
+	&_header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 0.4rem;
+		&-title {
+			margin: auto;
+			font-size: 1.5rem;
+		}
+	}
+	&_close {
+		font-size: 1.5rem;
+	}
+	&_info {
+		margin-top: 2rem;
+		&-blurb {
+			font-size: 1.25rem;
+		}
+		&-ul {
+			margin: 0;
+			padding-left: 1.3rem;
+			padding-top: 1rem;
+			border-top: 1px solid;
+			border-bottom: 1px solid;
+		}
+		&-li {
+			font-size: 1.15rem;
+   	 margin-bottom: 1rem;
+		}
+	}
+}

@@ -19,7 +19,7 @@ body {
   color: #fff;
   font-size: 1.8rem;
   margin: auto;
-  padding-bottom: .8rem;
+  margin-bottom: .25rem;
 }
 
 .icon-moon {
@@ -28,6 +28,13 @@ body {
 
 .icon-star {
   color: #fffc71;
+}
+
+.icon-close {
+  font-size: 1.5rem;
+  position: absolute;
+  right: 5%;
+  top: 2%;
 }
 
 .show {
@@ -108,6 +115,7 @@ body {
 .item-image {
   width: 11rem;
   height: 10rem;
+  margin: auto;
 }
 
 .item-title {
@@ -172,14 +180,19 @@ body {
       -ms-flex: 1;
           flex: 1;
   max-width: inherit;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.footer_filter-filter, .footer_filter-info, .footer_filter-dir {
-  position: absolute;
-  bottom: 0;
+.footer-filter-text, .footer-info, .footer-dir {
   color: #fff;
-  margin: .1rem;
-  top: 62%;
+  font-size: .9rem;
+  margin-bottom: .1rem;
 }
 
 .footer {
@@ -197,29 +210,11 @@ body {
           justify-content: space-between;
 }
 
-.footer_filter-active {
-  margin: auto;
-  color: #fff;
-  position: relative;
-}
-
-.footer_filter-filter {
-  left: 10%;
-}
-
-.footer_filter-info {
-  left: 44.5%;
-}
-
-.footer_filter-dir {
-  right: 5%;
-}
-
 .active {
   color: #333399;
 }
 
-#activeFilter {
+#filterIcon {
   -webkit-transition: all .5s;
   transition: all .5s;
 }
@@ -261,16 +256,16 @@ body {
 .modal {
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
   width: 94%;
   right: 0;
   background: #9d69ea;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(8%, #a76ef3d9), to(#32a0ef));
+  background: linear-gradient(to top, #a76ef3d9 8%, #32a0ef);
   color: #fff;
   border-radius: 1rem;
-  height: 50vh;
   margin: auto;
-  margin-top: 20vh;
+  margin-top: 30%;
 }
 
 .modal_header {
@@ -283,16 +278,17 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .modal_header h3 {
+  font-size: 1.1rem;
+  padding: 1.75rem 1rem 1rem;
   margin: auto;
-  font-size: 1.25rem;
+  text-align: center;
 }
 
 .modal_main {
-  padding: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -300,10 +296,17 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal_main p {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+  margin: auto;
+  margin-top: 1.5rem;
+  margin-bottom: .5rem;
+  font-weight: bold;
 }
 
 .modal_button-submit {
@@ -315,5 +318,83 @@ body {
   background: #379dee;
   color: #fff;
   font-weight: bold;
+}
+
+.modal_input-note {
+  padding: .25rem;
+  margin: .5rem;
+  border: none;
+}
+
+.modal_input-name {
+  padding: .25rem;
+  font-size: 1.1rem;
+  margin: .5rem;
+  border: none;
+}
+
+.about {
+  background: #9c68eb;
+  border-radius: 1rem;
+  width: 85%;
+  margin: auto;
+  margin-top: 7rem;
+  padding: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  color: #fff;
+  height: 77vh;
+}
+
+.about_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 0.4rem;
+}
+
+.about_header-title {
+  margin: auto;
+  font-size: 1.5rem;
+}
+
+.about_close {
+  font-size: 1.5rem;
+}
+
+.about_info {
+  margin-top: 2rem;
+}
+
+.about_info-blurb {
+  font-size: 1.25rem;
+}
+
+.about_info-ul {
+  margin: 0;
+  padding-left: 1.3rem;
+  padding-top: 1rem;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.about_info-li {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
 }
 /*# sourceMappingURL=global.css.map */

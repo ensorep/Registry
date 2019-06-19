@@ -29,7 +29,7 @@ body {
   color: #fff;
   font-size: $ftr-size;
   margin: auto;
-  padding-bottom: .8rem;
+  margin-bottom: .25rem;
 }
 
 .icon {
@@ -50,6 +50,12 @@ body {
   &-bars {
     @extend %filtericon;
   }
+  &-close {
+    font-size: 1.5rem;
+    position: absolute;
+    right: 5%;
+    top: 2%;
+  }
 }
 
 .show{
@@ -67,3 +73,4 @@ body {
 @import 'footer';
 @import 'filters';
 @import 'modal';
+@import 'about';

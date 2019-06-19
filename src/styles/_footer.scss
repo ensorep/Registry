@@ -5,13 +5,13 @@ $border: 3px solid #eeeeee;
   display: flex;
   flex: 1;
   max-width: inherit;
+  flex-direction: column;
+  align-items: center;
 }
 %footer-text {
-  position: absolute;
-    bottom: 0;
     color: #fff;
-    margin: .1rem;
-    top: 62%;
+    font-size: .9rem;
+    margin-bottom: .1rem;
 }
 .footer {
   display: flex;
@@ -21,26 +21,17 @@ $border: 3px solid #eeeeee;
   background: linear-gradient(to left, #333399e8 8%, #a76ef3);
   bottom: 0;
   justify-content: space-between;
-  &_filter {
-    @extend %footer-item;
-    // background-color: $gradient1;
-    &-active {
-      margin: auto;
-      color: #fff;
-      position: relative;
-    }
-    &-filter {
-      left: 10%;
+    &-filter-text {
       @extend %footer-text;
     }
     &-info {
-      left: 44.5%;
       @extend %footer-text;
     }
     &-dir {
-      right: 5%;
       @extend %footer-text;
     }
+  &_filter{
+    @extend %footer-item;
   }
   &_about{
     @extend %footer-item;
@@ -55,6 +46,6 @@ $border: 3px solid #eeeeee;
   color: $primary;
 }
 
-#activeFilter{
+#filterIcon{
   transition: all .5s;
 }

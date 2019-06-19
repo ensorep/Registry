@@ -13,17 +13,15 @@ else /* else use Google */
 
 
 function toggleFilters() {
-let filterMenu = document.getElementById("filter")
-let filterIcon = document.getElementById("activeFilter")
-
-
-  if(filterMenu.classList.contains("show")){
-    filterMenu.classList.remove("show")
-    filterIcon.classList.remove("active")
+  let filterMenu = document.getElementById("filter").classList
+  let filterIcon = document.getElementById("filterIcon").classList
+  if(filterMenu.contains("show")){
+    filterMenu.remove("show")
+    filterIcon.remove("active")
   }
   else{
-    filterMenu.classList.add("show");
-    filterIcon.classList.add("active");
+    filterMenu.add("show");
+    filterIcon.add("active");
   }
 }
 
@@ -35,29 +33,26 @@ export default props => (
 
   <div className="footer">
     <div onClick={toggleFilters}  className="footer_filter">  
-      <div
-        id="activeFilter"
-        className="footer_filter-active">
-          <FontAwesomeIcon 
-            className = "icon-bars"
-            icon ="bars"/>
-          
-      </div>
-      <span className="footer_filter-filter">FILTER</span>
+      <FontAwesomeIcon 
+        id="filterIcon"
+        className = "icon-bars"
+        icon ="bars"/>
+      <span className="footer-filter-text">FILTER</span>
     </div>
+      
     <div onClick={toggleInfo} className="footer_about">
       <FontAwesomeIcon 
-      className="icon-info"
-      icon="info-circle"/>
-      <span className="footer_filter-info">INFO</span>
+        className="icon-info"
+        icon="info-circle"/>
+      <span className="footer-info">INFO</span>
     </div>
-    <div 
-      onClick={launchMap} 
-      className="footer_map">
-    <FontAwesomeIcon
-      className="icon-directions"
-      icon="directions"/>
-      <span className="footer_filter-dir">DIRECTIONS</span>
+
+    <div onClick={launchMap} className="footer_map">
+      <FontAwesomeIcon
+        className="icon-directions"
+        icon="directions"/>
+      <span className="footer-dir">DIRECTIONS</span>
     </div>
+
   </div>
 )

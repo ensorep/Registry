@@ -1,27 +1,39 @@
 import React from "react"
+import ReactDOM from "react-dom"
 import  Modal  from "./modal"
+import Layout from "./Layout"
+import Header from "./Header"
+import Footer from "./Footer"
 
-
-
-function build(title, img) {
-  return (
-    <Modal 
-      title = {title}
-      image = {img}
-    />
+export function Build(title,imgsrc){
+  ReactDOM.render(
+  <Layout>
+      <Header/>
+      <Modal title={title} imgsrc ={imgsrc}/>
+      <Footer/>
+  </Layout>,
+    document.getElementById("___gatsby")
   )
 }
 
-
-const Item = props => (
-  <div data-available={props.available} className="item">
-    <h3 className="item-title">{props.title}</h3>
-    <a href={props.src}>
-    <img className="item-image" alt={props.title} src={props.imgsrc}/>
+class Item extends React.Component {
+  render(){
+    return (
+      <div data-available={this.props.available} className="item">
+    <h3 className="item-title">{this.props.title}</h3>
+    <a href={this.props.src}>
+    <img className="item-image" alt={this.props.title} src={this.props.imgsrc}/>
     </a>
-    <h3 className="item-price">{props.price}</h3>
-    <button onClick={()=>{build(props.title,props.imgsrc)}} className="item_button-give">Give this gift</button>
+    <h3 className="item-price">{this.props.price}</h3>
+    <button onClick={()=>{Build(this.props.title,this.props.imgsrc)}} className="item_button-give">Give this gift</button>
   </div>
-)
+    )
+  }
+}
 
-export default Item;
+
+
+
+
+
+
