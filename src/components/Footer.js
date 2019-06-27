@@ -33,7 +33,7 @@ function toggleInfo() {
 export default props => (
 
   <div className="footer">
-    <div className="footer_filter">  
+    <div onClick={toggleFilters} className="footer_filter">  
       <FontAwesomeIcon 
         id="filterIcon"
         className = "icon-bars"

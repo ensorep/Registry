@@ -2,6 +2,8 @@ import React from "react"
 import ReactDOM from "react-dom"
 import Index from "../pages/index"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import firebase from "firebase/app"
+import 'firebase/database'
 
 function Rebuild() {
     document.getElementById("modal").classList.add("hide");
@@ -32,6 +34,17 @@ function toggleOther() {
  }
 }
 
+function sendLove(){
+	let love = document.getElementById('lovetext').value
+	let sender = document.getElementById('lovesender').value
+  let update = {note: love, name: sender}
+  let x = Math.floor(Math.random() * 10000)
+	firebase.database().ref(`/items/Donation/Love/${x}`).update(update)
+	alert('Thank you for the love!')
+	Rebuild()
+}
+
+
 export default () => (
 
 <div id="modal" className="donation">
@@ -57,18 +70,19 @@ export default () => (
 		</a>
 	</div>
 
-	<div id="love" onClick={toggleLove} className="donation_love">
-		<h4 className="donation_love-header">Love</h4>
+	<div className="donation_love">
+		<h4 id="love" onClick={toggleLove} className="donation_love-header">Love</h4>
 		<div id="testArea" className="donation_love-content" >
-		<textarea placeholder="Write to heart's content"></textarea>
-		<button>Submit</button>
+		<input id="lovesender" type="text" placeholder="Enter Your Name If You Wish"></input>
+		<textarea id="lovetext" placeholder="Write to heart's content"></textarea>
+		<button onClick={sendLove}>Submit</button>
 		</div>
 	</div>
 
 	<div id="other" onClick={toggleOther} className="donation_other">
 		<h4 className="donation_other-header">Other</h4>
 		<div id="testCon" className="donation_other-content">
-			<p>Test Content</p>
+			<p>If you'd like to donate second-hand items, a subscription, or something else, you may reach us at tao.rep@gmail.com</p>
 		</div>
 	</div>
 

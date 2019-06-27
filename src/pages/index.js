@@ -45,23 +45,43 @@ const items = [
     // available: true,
   },
 
+  // {
+  //   key: 2,
+  //   id: ()=>items[1].title.split(' ')[0]+'item',
+  //   title: 'Graco 4ever 4-in-1 Convertible Car Seat',
+  //   price: 199,
+  //   src: () =>items[1].title.split(" ").map(item=>item=`${item}+`).join(''),
+  //   imgsrc:'https://i5.walmartimages.com/asr/59fdc611-05bb-4143-b8f3-bc32d9f3b80b_1.7676396e5c290986864e918027772f94.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF',
+  //   // available: true,
+  // },
+
   {
     key: 2,
     id: ()=>items[1].title.split(' ')[0]+'item',
-    title: 'Graco 4ever 4-in-1 Convertible Car Seat',
-    price: 199,
+    title: 'Britax B Agile & B Safe 35 Travel System (Used)',
+    price: 250,
     src: () =>items[1].title.split(" ").map(item=>item=`${item}+`).join(''),
-    imgsrc:'https://i5.walmartimages.com/asr/59fdc611-05bb-4143-b8f3-bc32d9f3b80b_1.7676396e5c290986864e918027772f94.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF',
+    imgsrc:'https://m.media-amazon.com/images/I/715SuAPJ86L._AC_UL436_.jpg',
     // available: true,
   },
+
+  // {
+  //   key: 3,
+  //   id: ()=>items[2].title.split(' ')[0]+'item',
+  //   title: 'Baby Jogger City Mini',
+  //   price: 150,
+  //   src: () => items[2].title.split(' ').map(item=>item=`${item}+`).join(''),
+  //   imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/81H3lgWOVZL._SY355_.jpg',
+  //   // available: true,
+  // },
 
   {
     key: 3,
     id: ()=>items[2].title.split(' ')[0]+'item',
-    title: 'Baby Jogger City Mini',
-    price: 150,
-    src: () => items[2].title.split(' ').map(item=>item=`${item}+`).join(''),
-    imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/81H3lgWOVZL._SY355_.jpg',
+    title: 'Skip Hop Messenger Diaper Bag',
+    price: 50,
+    src: () =>items[2].title.split(" ").map(item=>item=`${item}+`).join(''),
+    imgsrc:'https://images-na.ssl-images-amazon.com/images/I/81U2VINB1zL._SX522_.jpg',
     // available: true,
   },
 
@@ -85,6 +105,68 @@ const items = [
     // available: true,
   },
 
+  {
+    key: 6,
+    id: ()=>items[5].title.split(' ')[0]+'item',
+    title: 'Hiccapop Wipe Warmer',
+    price: 35,
+    src: () => items[5].title.split(' ').map(item=>item=`${item}+`).join(''),
+    imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/51myePjoXZL._SX522_.jpg',
+    // available: true,
+  },
+
+  {
+    key: 7,
+    id: ()=>items[6].title.split(' ')[0]+'item',
+    title: 'Ubbi Steel Diaper Pail',
+    price: 70,
+    src: () => items[6].title.split(' ').map(item=>item=`${item}+`).join(''),
+    imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/71tvaGbyLxL._SX522_.jpg',
+    // available: true,
+  },
+
+  {
+    key: 8,
+    id: ()=>items[7].title.split(' ')[0]+'item',
+    title: 'The Honest Company Baby Wipes',
+    price: 20,
+    src: () => items[7].title.split(' ').map(item=>item=`${item}+`).join(''),
+    imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/71Vv6Mb61JL._SX522_.jpg',
+    // available: true,
+  },
+
+  {
+    key: 9,
+    id: ()=>items[8].title.split(' ')[0]+'item',
+    title: 'Philips Avent Natural Glass Bottle Baby Gift Set',
+    price: 45,
+    src: () => items[8].title.split(' ').map(item=>item=`${item}+`).join(''),
+    imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/81Jl30M3kGL._SX522_.jpg',
+    // available: true,
+  },
+
+  {
+    key: 10,
+    id: ()=>items[9].title.split(' ')[0]+'item',
+    title: 'Philips Avent Drying Rack',
+    price: 15,
+    src: () => items[9].title.split(' ').map(item=>item=`${item}+`).join(''),
+    imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/71zN-SbE0lL._SX522_.jpg',
+    // available: true,
+  },
+
+  {
+    key: 11,
+    id: ()=>items[10].title.split(' ')[0]+'item',
+    title: 'Boon Care Health and Grooming Kit',
+    price: 25,
+    src: () => items[10].title.split(' ').map(item=>item=`${item}+`).join(''),
+    imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/81xuiQWSDOL._SX522_.jpg',
+    // available: true,
+  },
+
+
+
 
   // {
   //   key: 6,
@@ -98,11 +180,11 @@ const items = [
 
 
   {
-    key: 6,
-    id: ()=>items[5].title.split(' ')[0]+'item',
+    key: 12,
+    id: ()=>items[11].title.split(' ')[0]+'item',
     title: 'Nature Babycare Diapers (25ct)',
     price: 10,
-    src: () => items[5].title.split(' ').map(item=>item=`${item}+`).join(''),
+    src: () => items[11].title.split(' ').map(item=>item=`${item}+`).join(''),
     imgsrc: 'https://www.naty.com/on/demandware.static/-/Sites-naty-catalog/default/dw72ddcce7/Products/diapering/2018/diaper-newborn-singlepack-2018/large-650x650/8178341_Baby-Diapers-Single-Pack-Size-Newborn_01_large.png',
     // available: true,
   },
@@ -113,10 +195,10 @@ return (
   items.map(item=>{
     return( 
       <Item
-        id= {item.id}
+        // id= {item.id}
         key = {item.key}
         title={item.title}
-        price={`$${item.price}`}
+        price={item.price}
         src={`${google}${item.src()}&tbm=shop`}
         imgsrc={item.imgsrc}
         available={item.available}

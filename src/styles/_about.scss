@@ -1,18 +1,22 @@
 .about {
+	overflow: auto;
 	display: none;
 	background: rgb(156, 104, 235);
 	background: linear-gradient(to top, #a76ef3 8%, #32a0ef);
 	border-radius: 1rem;
-	width: 85%;
+	// width: 85%;
 	margin: auto;
-	margin-top: 20%;
+	margin-top: 5rem;
+	margin-bottom: 4rem;
 	padding: 0 1rem;
 	position: fixed;
 	top: 0;
 	right: 0;
 	left: 0;
+	bottom: 0;
 	color: #fff;
 	height: auto;
+	max-height: 500px;
 	&_header {
 		display: flex;
 		align-items: center;

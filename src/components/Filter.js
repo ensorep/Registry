@@ -1,60 +1,64 @@
 import React from "react"
 
-function showAll() {
-  document.getElementById("purchased").classList.remove("activeFilter");
-  document.getElementById("available").classList.remove("activeFilter");
-  document.getElementById("all").classList.add("activeFilter");
+function underfifty() {
+  document.getElementById("overhundred").classList.remove("activeFilter");
+  document.getElementById("fiftytohundred").classList.remove("activeFilter");
+  document.getElementById("underfifty").classList.add("activeFilter");
  let items = document.getElementsByClassName("item")
  for(let i in items){
-   if(items[i].classList){
-    items[i].classList.remove("hide");
-    items[i].classList.add("showf");
-   } 
- }
+  let item = items[i]
+  if(item.classList){
+    item.classList.remove('hide')
+    if(item.dataset.price > 50){
+      items[i].classList.add("hide")
+    }
+  }
+  }
 }
 
-function showPurchased() {
-  document.getElementById("all").classList.remove("activeFilter");
-  document.getElementById("available").classList.remove("activeFilter");
-  document.getElementById("purchased").classList.add("activeFilter");
+function fiftytohundred() {
+  document.getElementById("underfifty").classList.remove("activeFilter");
+  document.getElementById("overhundred").classList.remove("activeFilter");
+  document.getElementById("fiftytohundred").classList.add("activeFilter");
   
 
   let items = document.getElementsByClassName("item")
   for(let i in items){
-    let itemClass = items[i].classList;
-    if(itemClass){
-      itemClass.remove("hide");
-        if(items[i].dataset.available !== "purchased"){
-          itemClass.add("hide")
+    let item = items[i]
+    if(item.classList){
+      item.classList.remove('hide')
+      if(item.dataset.price > 100 || item.dataset.price < 50){
+        items[i].classList.add("hide")
       }
     }
-  } 
+  }
 }
 
-function showavailable() {
-  document.getElementById("purchased").classList.remove("activeFilter");
-  document.getElementById("all").classList.remove("activeFilter");
-  document.getElementById("available").classList.add("activeFilter");
+function overhundred() {
+  document.getElementById("underfifty").classList.remove("activeFilter");
+  document.getElementById("fiftytohundred").classList.remove("activeFilter");
+  document.getElementById("overhundred").classList.add("activeFilter");
   let items = document.getElementsByClassName("item")
   for(let i in items){
-    let itemClass = items[i].classList;
-    if(itemClass){
-      itemClass.remove("hide");
-        if(items[i].dataset.available !== "available"){
-          itemClass.add("hide")
+    let item = items[i]
+    if(item.classList){
+      item.classList.remove('hide')
+      if(item.dataset.price < 100){
+        items[i].classList.add("hide")
       }
     }
-  } 
-}
+  }
+} 
+
 
 export default () => ( 
   <div id="filter" className="filter">
   <ul className="filter_ul">
-    <li id="all" className="filter_all">All</li>
-    <li id="purchased"
-      className="filter_purchased">Purchased</li>
-    <li id="available" 
-      className="filter_available">Available</li>
+    <li id="underfifty" onClick={underfifty} className="filter_all">under $50</li>
+    <li id="fiftytohundred" onClick={fiftytohundred}
+      className="filter_purchased">$50 - $100</li>
+    <li id="overhundred" onClick={overhundred}
+      className="filter_available">$100 +</li>
   </ul>
 </div>
   )
