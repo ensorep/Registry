@@ -1,4 +1,4 @@
-$ftr-height: 8vh;
+$ftr-height: auto;
 $border: 3px solid #eeeeee;
 %footer-item{
   height: $ftr-height;
@@ -16,6 +16,7 @@ $border: 3px solid #eeeeee;
 .footer {
   display: flex;
   height: $ftr-height;
+  padding-top: 0.5rem;
   width: 100%;
   position: fixed;
   background: linear-gradient(to left, #333399e8 8%, #a76ef3);

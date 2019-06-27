@@ -17,6 +17,14 @@ body {
   background-size: contain;
 }
 
+form {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 #app{
   position: relative;
   // background: url('https://png.pngtree.com/thumb_back/fw800/back_pic/03/72/84/4657b98ace28ed4.jpg');
@@ -30,6 +38,14 @@ body {
   font-size: $ftr-size;
   margin: auto;
   margin-bottom: .25rem;
+}
+
+%donation-icon{
+  padding: 2rem;
+  color: #fff;
+  font-size: 3.5rem;
+  margin: auto;
+  border-radius: .5rem;
 }
 
 .icon {
@@ -53,8 +69,16 @@ body {
   &-close {
     font-size: 1.5rem;
     position: absolute;
-    right: 5%;
+    right: 7%;
     top: 2%;
+  }
+  &-heart{
+    @extend %donation-icon;
+    background-color: #d76cf0;
+  }
+  &-question{
+    @extend %donation-icon;
+    background-color: coral;
   }
 }
 
@@ -68,9 +92,23 @@ body {
   display: none !important;
 }
 
+.noVis{
+  visibility: hidden;
+}
+
+// toggle{
+//   &Love{
+    
+//   }
+//   &Other{
+
+//   }
+// }
+
 @import 'header';
 @import 'item';
 @import 'footer';
 @import 'filters';
 @import 'modal';
 @import 'about';
+@import 'donation';

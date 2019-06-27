@@ -1,5 +1,6 @@
 {
   "projects": {
-    "registry": "fir-registry-4ae92"
+    "registry": "fir-registry-4ae92",
+    "default": "fir-registry-4ae92"
   }
 }

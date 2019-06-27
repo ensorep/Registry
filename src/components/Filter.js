@@ -50,10 +50,10 @@ function showavailable() {
 export default () => ( 
   <div id="filter" className="filter">
   <ul className="filter_ul">
-    <li id="all" onClick={showAll} className="filter_all">All</li>
-    <li id="purchased" onClick={showPurchased}
+    <li id="all" className="filter_all">All</li>
+    <li id="purchased"
       className="filter_purchased">Purchased</li>
-    <li id="available" onClick={showavailable}
+    <li id="available" 
       className="filter_available">Available</li>
   </ul>
 </div>

@@ -1,3 +1,17 @@
+%button {
+  margin: 1rem;
+  padding: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 15px;
+  background: #379dee;
+  // background: linear-gradient(to left, #a76ef3d9 8%, #32a0ef);
+  color: #fff;
+  font-weight: bold;
+  transition: all .5s;
+  width:80%;
+}
+
 .modal{
   position: absolute;
   top: 0;
@@ -9,12 +23,13 @@
   color: #fff;
   border-radius: 1rem;
   margin: auto;
-  margin-top: 30%;
+  margin-top: 20%;
+  height: auto;
   &_header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem 0;
     h3 {
       font-size: 1.1rem;
       padding: 1.75rem 1rem 1rem;
@@ -25,41 +40,79 @@
   &_main {
     display: flex;
     flex-direction: column;
-    p {
-      font-size: 1.1rem;
-      margin: auto;
-      margin-top: 1.5rem;
-      margin-bottom: .5rem;
-      font-weight: bold;
+    padding: 1rem;
+    .name-p{
+      display: none;
     }
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
+    p{
+      margin-top: .5rem;
+      text-align: center;
+    }
+    .availtext{
+      display: none;
+    }
+    .unavailtext {
+      display: none;
+    }
   }
   &_button {
+    &-availability {
+      @extend %button;
+      margin-bottom: 0;
+      &-true{
+        background-color: green;
+        border-radius: 5px;
+        width: 100%;
+        text-align: center;
+        margin-top: .5rem;
+      }
+      &-confirm{
+        display:none;
+      }
+      &-false{
+        background-color:#e00800;
+        border-radius: 5px;
+        width: 100%;
+        text-align: center;
+        margin-top: .5rem;
+      }
+    }
     &-submit {
-      margin: 1rem;
-      padding: 0.5rem;
-      border: none;
-      font-size: 1rem;
-      border-radius: 15px;
-      background: #379dee;
-      // background: linear-gradient(to left, #a76ef3d9 8%, #32a0ef);
-      color: #fff;
-      font-weight: bold;
+      @extend %button;
+      display: none;
     }
   }
   &_input{
     &-note{
+      display: none;
       padding: .25rem;
       margin: .5rem;
       border:none;
+      width:80%;
     }
     &-name{
+      display: none;
       padding: .25rem;
       font-size:1.1rem;
-      margin: .5rem;
+      margin: .5rem .5rem 0;
       border:none;
+      width:80%;
     }
   }
 }
+
+#button{
+  &:focus{
+    outline: $gradient1;
+    border-radius: 1rem;
+  }
+}
+
+#spanAvail {
+  transition: all 1s;
+}
+
+.enterName {
+  outline: red;
+}
+

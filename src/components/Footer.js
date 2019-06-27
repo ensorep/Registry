@@ -6,9 +6,9 @@ function launchMap() {
   ((navigator.platform.indexOf("iPhone") !== -1) || 
    (navigator.platform.indexOf("iPad") !== -1) || 
    (navigator.platform.indexOf("iPod") !== -1))
-  window.open("maps://maps.google.com/maps?daddr=52+Deep+Woods+Lane,+Cameron,+NC/");
+  window.open("maps://maps.google.com/maps?daddr=92+Deep+Woods+Lane,+Cameron,+NC/");
 else /* else use Google */
-  window.open("https://maps.google.com/maps?daddr=52+Deep+Woods+Lane,+Cameron,+NC/");
+  window.open("https://maps.google.com/maps?daddr=92+Deep+Woods+Lane,+Cameron,+NC/");
 }
 
 
@@ -26,13 +26,14 @@ function toggleFilters() {
 }
 
 function toggleInfo() {
-  //code
+  document.getElementById("about").classList.remove("hide")
+  document.getElementById("about").classList.add("show")
 }
 
 export default props => (
 
   <div className="footer">
-    <div onClick={toggleFilters}  className="footer_filter">  
+    <div className="footer_filter">  
       <FontAwesomeIcon 
         id="filterIcon"
         className = "icon-bars"

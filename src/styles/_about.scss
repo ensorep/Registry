@@ -1,18 +1,18 @@
 .about {
+	display: none;
 	background: rgb(156, 104, 235);
+	background: linear-gradient(to top, #a76ef3 8%, #32a0ef);
 	border-radius: 1rem;
 	width: 85%;
 	margin: auto;
-	margin-top: 7rem;
+	margin-top: 20%;
 	padding: 0 1rem;
-	display: flex;
-	flex-direction: column;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	right: 0;
 	left: 0;
 	color: #fff;
-	height: 77vh;
+	height: auto;
 	&_header {
 		display: flex;
 		align-items: center;
@@ -27,9 +27,14 @@
 		font-size: 1.5rem;
 	}
 	&_info {
-		margin-top: 2rem;
+		margin: 1.5rem 0;
 		&-blurb {
+			margin: .5rem;
 			font-size: 1.25rem;
+		}
+		.thanks {
+			text-align: center;
+			margin-bottom: .5rem;
 		}
 		&-ul {
 			margin: 0;
