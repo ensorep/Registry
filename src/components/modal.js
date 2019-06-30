@@ -23,8 +23,7 @@ function isAvailable(title) {
   let name = document.getElementById("name").value
 
   //if Confirm Gift was pressed
-  if(document.getElementById("button").innerText === "Confirm Gift"){
-    console.log(document.getElementById("button").innerText)
+  if(document.getElementById("button").classList.contains('available')){
     if(name){
       console.log("submit item")
       updateItem(title,name,note)
@@ -35,7 +34,7 @@ function isAvailable(title) {
       document.getElementById("namePrompt").classList.add('modal_button-availability-false')
     }
   }
-  else if(document.getElementById("button").innerText !== "Confirm Gift") {
+  else {
     firebase.database().ref().on("value", snapshot => {
       if(snapshot.val().items[title] && !document.getElementById("name").classList.contains("show")) {
         document.getElementById("spanUnavail").classList.add("modal_button-availability-false","show")
@@ -50,6 +49,7 @@ function isAvailable(title) {
         document.getElementById("spanCheck").classList.add("hide")
         document.getElementById("spanAvail").classList.add("show")
         document.getElementById("confirm").classList.add("show")
+        document.getElementById("button").classList.add("available")
         console.log("this item is available")
       }
     })

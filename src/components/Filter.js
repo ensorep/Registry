@@ -9,7 +9,7 @@ function underfifty() {
   let item = items[i]
   if(item.classList){
     item.classList.remove('hide')
-    if(item.dataset.price > 50){
+    if(item.dataset.price >= 50){
       items[i].classList.add("hide")
     }
   }
@@ -43,7 +43,7 @@ function overhundred() {
     let item = items[i]
     if(item.classList){
       item.classList.remove('hide')
-      if(item.dataset.price < 100){
+      if(item.dataset.price <= 100){
         items[i].classList.add("hide")
       }
     }
@@ -58,7 +58,7 @@ export default () => (
     <li id="fiftytohundred" onClick={fiftytohundred}
       className="filter_purchased">$50 - $100</li>
     <li id="overhundred" onClick={overhundred}
-      className="filter_available">$100 +</li>
+      className="filter_available">over $100</li>
   </ul>
 </div>
   )

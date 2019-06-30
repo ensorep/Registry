@@ -26,9 +26,16 @@ function toggleFilters() {
 }
 
 function toggleInfo() {
-  document.getElementById("about").classList.remove("hide")
-  document.getElementById("about").classList.add("show")
+  let about = document.getElementById("about").classList;
+  if(about.contains('show')){
+    about.remove("show")
+    about.add("hide")
+  }else {
+  about.remove("hide")
+  about.add("show")
+  }
 }
+
 
 export default props => (
 

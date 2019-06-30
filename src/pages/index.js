@@ -108,20 +108,30 @@ const items = [
   {
     key: 6,
     id: ()=>items[5].title.split(' ')[0]+'item',
-    title: 'Hiccapop Wipe Warmer',
-    price: 35,
+    title: 'Fisher-Price Soothing Motions Bassinet (Used)',
+    price: 120,
     src: () => items[5].title.split(' ').map(item=>item=`${item}+`).join(''),
-    imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/51myePjoXZL._SX522_.jpg',
+    imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/71pNJZruC4L._SX522_.jpg',
     // available: true,
   },
+
+  // {
+  //   key: 6,
+  //   id: ()=>items[5].title.split(' ')[0]+'item',
+  //   title: 'Hiccapop Wipe Warmer',
+  //   price: 35,
+  //   src: () => items[5].title.split(' ').map(item=>item=`${item}+`).join(''),
+  //   imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/51myePjoXZL._SX522_.jpg',
+  //   // available: true,
+  // },
 
   {
     key: 7,
     id: ()=>items[6].title.split(' ')[0]+'item',
-    title: 'Ubbi Steel Diaper Pail',
-    price: 70,
+    title: 'Stainless Steel Trash Can',
+    price: 20,
     src: () => items[6].title.split(' ').map(item=>item=`${item}+`).join(''),
-    imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/71tvaGbyLxL._SX522_.jpg',
+    imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/71-NUBwRe5L._SL1500_.jpg',
     // available: true,
   },
 
@@ -187,6 +197,60 @@ const items = [
     src: () => items[11].title.split(' ').map(item=>item=`${item}+`).join(''),
     imgsrc: 'https://www.naty.com/on/demandware.static/-/Sites-naty-catalog/default/dw72ddcce7/Products/diapering/2018/diaper-newborn-singlepack-2018/large-650x650/8178341_Baby-Diapers-Single-Pack-Size-Newborn_01_large.png',
     // available: true,
+  },
+
+  {
+    key: 13,
+    id: ()=>items[12].title.split(' ')[0]+'item',
+    title: 'Brooklyn Bamboo Burp Cloths (3ct)',
+    price: 20,
+    src: () => items[12].title.split(' ').map(item=>item=`${item}+`).join(''),
+    imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/813GerEeKeL._SX522_.jpg',
+    // available: true,
+  },
+
+  {
+    key: 14,
+    id: ()=>items[13].title.split(' ')[0]+'item',
+    title: `Dr. Brown's Bottle Starter Pack`,
+    price: 30,
+    src: () => items[13].title.split(' ').map(item=>item=`${item}+`).join(''),
+    imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/815%2BcwINFWL._SL1500_.jpg',
+  },
+
+  {
+    key: 15,
+    id: ()=>items[14].title.split(' ')[0]+'item',
+    title: 'Just Hatched Baby Body Lotion',
+    price: 25,
+    src: () => items[14].title.split(' ').map(item=>item=`${item}+`).join(''),
+    imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/71f8LFzywaL._SL1500_.jpg',
+  },
+
+  {
+    key: 16,
+    id: ()=>items[15].title.split(' ')[0]+'item',
+    title: 'Babyganics Shampoo + Body Wash (Fragrence Free)',
+    price: 10,
+    src: () => items[15].title.split(' ').map(item=>item=`${item}+`).join(''),
+    imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/511oiy654-L._SL1011_.jpg',
+  },
+
+  {
+    key: 17,
+    id: ()=>items[16].title.split(' ')[0]+'item',
+    title: 'Levoit Air Purifier',
+    price: 70,
+    src: () => items[16].title.split(' ').map(item=>item=`${item}+`).join(''),
+    imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/71HbEN4E9EL._SL1500_.jpg',
+  },
+  {
+    key: 18,
+    id: ()=>items[17].title.split(' ')[0]+'item',
+    title: 'EcoNursing Washable Pads (12cm)',
+    price: 15,
+    src: () => items[17].title.split(' ').map(item=>item=`${item}+`).join(''),
+    imgsrc: 'https://images-na.ssl-images-amazon.com/images/I/81EMJZ8j1EL._SL1500_.jpg',
   },
 ]
 

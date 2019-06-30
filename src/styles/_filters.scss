@@ -30,6 +30,10 @@
   }
 }
 
+.available {
+  color: inherit;
+}
+
 .activeFilter {
   transition: all .4s;
   background: $gradient1;
