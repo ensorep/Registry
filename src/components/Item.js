@@ -7,7 +7,6 @@ import Footer from "./Footer"
 import Donation from "./Donation"
 
 export function Build(title,imgsrc){
-  if(title !== "Donation"){
   ReactDOM.render(
   <Layout>
       <Header/>
@@ -16,17 +15,6 @@ export function Build(title,imgsrc){
   </Layout>,
     document.getElementById("___gatsby")
   )
-  }
-  else if(title === "Donation"){
-    ReactDOM.render(
-      <Layout>
-        <Header/>
-        <Donation/>
-        <Footer/>
-      </Layout>,
-      document.getElementById("___gatsby")
-    )
-  }
 }
 
 export default props => (
